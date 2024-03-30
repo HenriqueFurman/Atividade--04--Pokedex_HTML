@@ -61,3 +61,31 @@ const createPokemonCard = (poke) => {
 };
 
 fetchPokemons();
+
+document.addEventListener("DOMContentLoaded", function() {
+    const searchButton = document.getElementById('search-button');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const pokeContainer = document.getElementById('pokeContainer');
+
+    searchButton.addEventListener('click', function() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+
+        // Limpar resultados anteriores
+        searchResults.innerHTML = '';
+
+        // Mostrar apenas os pokemons que correspondem à pesquisa e ocultar os demais
+        const pokemonCards = pokeContainer.querySelectorAll('.pokemon');
+        pokemonCards.forEach(pokemonCard => {
+            const pokemonName = pokemonCard.querySelector('.name').textContent.toLowerCase();
+            if (pokemonName.includes(searchTerm)) {
+                pokemonCard.style.display = ''; // Exibir os pokemons que correspondem à pesquisa
+            } else {
+                pokemonCard.style.display = 'none'; // Ocultar os pokemons que não correspondem à pesquisa
+            }
+        });
+
+        // Limpar campo de pesquisa após a pesquisa
+        searchInput.value = '';
+    });
+});
