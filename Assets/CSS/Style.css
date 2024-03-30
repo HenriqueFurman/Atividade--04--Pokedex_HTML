@@ -1,4 +1,7 @@
-/* Estilos gerais */
+/* Estilos Globais */
+/* =============== */
+
+/* Define o modelo de caixa para todos os elementos, zera margens e preenchimentos, e define a fonte */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,6 +9,10 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+/* Estilos do Corpo da Página */
+/* =========================== */
+
+/* Define o plano de fundo com gradiente linear e centraliza o conteúdo verticalmente */
 body {
     background: linear-gradient(to right, #d4d3dd, #efefbb);
     display: flex;
@@ -14,11 +21,119 @@ body {
     justify-content: center;
 }
 
-h1 {
-    letter-spacing: 5px;
+/* Estilos para Cabeçalho */
+/* ======================= */
+
+/* Cabeçalho fixo na parte superior, com fundo preto semi-transparente e texto branco */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-/* Estilos para o BoxPokemon */
+/* Estilos de Navegação */
+/* ===================== */
+
+/* Estilização da barra de navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+/* Estilização dos itens da navegação */
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+/* Estilização dos links de navegação */
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Estilos da Caixa de Busca */
+/* ========================== */
+
+/* Container da caixa de busca */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Container da entrada de busca */
+.search-form .search-input-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #5ac1e7;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+/* Texto de placeholder da entrada de busca */
+.search-form .search-input-placeholder {
+    top: 50%;
+    padding: 3px;
+    font-size: 16px;
+    line-height: 21px;
+    color: #b7b7b7;
+}
+
+/* Estilos da entrada de busca */
+.search-form .search-input {
+    flex: 1;
+    padding: 9px 0;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #e3ee4a;
+    border: none;
+    background: transparent;
+}
+
+/* Oculta o texto de placeholder quando a entrada de busca está em foco */
+.search-form .search-input:focus + .search-input-placeholder {
+    display: none;
+}
+
+/* Estilos do botão de busca */
+.search-form .search-button {
+    color: #5ac1e7;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #5ac1e7;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilização do botão de busca no hover */
+.search-form .search-button:hover {
+    background-color: #14b3db;
+    color: #f3f3f3;
+}
+
+/* Estilos do Conteúdo Principal */
+/* ============================== */
+
+/* Adiciona um espaçamento no topo para compensar a altura do cabeçalho fixo */
+.conteudo-principal {
+    padding-top: 70px; /* Ajuste este valor para corresponder à altura do cabeçalho */
+}
+
+/* Estilos do Container de Pokémons */
+/* ================================= */
+
+/* Container dos Pokémons */
 .pokeContainer {
     display: flex;
     flex-wrap: wrap;
@@ -28,6 +143,7 @@ h1 {
     max-width: 1200px;
 }
 
+/* Estilos de cada Pokémon */
 .pokemon {
     background-color: #eee;
     border-radius: 10px;
@@ -37,6 +153,7 @@ h1 {
     text-align: center;
 }
 
+/* Container da imagem do Pokémon */
 .imgContainer {
     display: flex;
     justify-content: center;
@@ -47,14 +164,17 @@ h1 {
     height: 120px;
 }
 
+/* Estilos da imagem do Pokémon */
 .imgContainer img {
     max-width: 90%;
 }
 
+/* Estilos das informações do Pokémon */
 .info {
     margin-top: 20px;
 }
 
+/* Estilos do número do Pokémon */
 .number {
     background-color: rgba(0, 0, 0, 0.15);
     padding: 2px 13px;
@@ -62,105 +182,8 @@ h1 {
     font-size: 0.8rem;
 }
 
+/* Estilos do nome do Pokémon */
 .name {
     margin: 15px 0 7px;
     letter-spacing: 1.5px;
-}
-
-
-/* Estilos do cabeçalho */
-header {
-    background-color: rgba(0, 0, 0, 0.7); /* Preto com 70% de transparência */
-    color: #ffffff;
-    padding: 10px 0;
-    position: fixed; /* Fixa o cabeçalho na parte superior */
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Garante que o cabeçalho esteja acima de outros elementos */
-}
-
-
-/* Estilos para a navegação do cabeçalho */
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-/* Estilos para o contêiner da pesquisa */
-.search-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Estilos para o formulário de pesquisa */
-.search-form .search-input-container {
-    display: flex;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0); /* Transparente */
-    background-repeat: no-repeat;
-    background-position: 11px 11px;
-    border: 1px solid #5ac1e7; /* Bordas azuis */
-    border-radius: 5px;
-    padding: 8px;
-}
-
-/* Estilos para o marcador de posição do formulário de pesquisa */
-.search-form .search-input-placeholder {
-    top: 50%;
-    padding: 3px;
-    font-size: 16px;
-    line-height: 21px;
-    color: #b7b7b7;
-}
-
-/* Estilos para a entrada do formulário de pesquisa */
-.search-form .search-input {
-    flex: 1;
-    padding: 9px 0;
-    margin-left: 10px;
-    font-size: 16px;
-    color: #e3ee4a; /* Cor do Texto na caixa de Texto */
-    border: none;
-    background: transparent;
-}
-
-/* Estilos para o marcador de posição do formulário de pesquisa quando focado */
-.search-form .search-input:focus + .search-input-placeholder {
-    display: none;
-}
-
-/* Estilos para o botão de pesquisa */
-.search-form .search-button {
-    color: #5ac1e7; /* Cor do Texto na Botao */
-    font-size: 16px;
-    background-color: transparent;
-    border: 1px solid #5ac1e7; /* Bordas azuis */
-    border-radius: 5px;
-    padding: 8px 12px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s; /* Transição suave de cores */
-}
-
-.search-form .search-button:hover {
-    background-color: #14b3db;
-    color: #f3f3f3;
-}
-
-/* Estilos do conteúdo principal */
-.conteudo-principal {
-    padding-top: 70px; /* Ajuste este valor para corresponder à altura do cabeçalho */
 }
