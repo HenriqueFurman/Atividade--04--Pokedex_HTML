@@ -1,20 +1,24 @@
 const pokeContainer = document.querySelector("#pokeContainer");
-const pokemonCount = 151;
+const pokemonCount = 493;
 const colors = {
-    fire: '#ff8c74',
-    grass: '#41d421',
-    electric: '#e5f127',
-    water: '#27b7f1',
-    ground: '#c68c39',
-    rock: '#b56d08',
-    fairy: '#f093f0',
-    poison: '#6f0fdb',
-    bug: '#ab2',
-    dragon: '#533fc4',
-    psychic: '#d521c5',
-    flying: '#61ade6',
-    fighting: '#da7e49',
-    normal: '#e1e1e1'
+    normal: '#B7B7A8',
+    fire: '#FF4422',
+    water: '#51A8FF',
+    electric: '#FFD451',
+    grass: '#8BD46E',
+    ice: '#7CD3FF',
+    fighting: '#C56E60',
+    poison: '#B76EA8',
+    ground: '#E2C56E',
+    flying:'#9AA8FF',
+    psychic: '#FF6EA8',
+    bug: '#B7C543',
+    rock: '#C5B67C',
+    ghost: '#7D7DC5',
+    dragon:'#8B7DF1',
+    fark: '#8B6E60',
+    steel: '#B7B7C5',
+    fairy: '#F1A8F1',
 };
 
 const mainTypes = Object.keys(colors);
@@ -32,6 +36,28 @@ const getPokemons = async (id) => {
     createPokemonCard(data);
 };
 
+const getGeneration = (id) => {
+    if (id >= 1 && id <= 151) {
+        return 'Geração I';
+    } else if (id >= 152 && id <= 251) {
+        return 'Geração II';
+    } else if (id >= 252 && id <= 386) {
+        return 'Geração III';
+    } else if (id >= 387 && id <= 493) {
+        return 'Geração IV';
+    } else if (id >= 494 && id <= 649) {
+        return 'Geração V';
+    } else if (id >= 650 && id <= 721) {
+        return 'Geração VI';
+    } else if (id >= 722 && id <= 809) {
+        return 'Geração VII';
+    } else if (id >= 810 && id <= 898) {
+        return 'Geração VIII';
+    } else {
+        return 'Geração desconhecida';
+    }
+};
+
 const createPokemonCard = (poke) => {
     const card = document.createElement('div');
     card.classList.add("pokemon");
@@ -40,10 +66,15 @@ const createPokemonCard = (poke) => {
     const id = poke.id.toString().padStart(3, '0');
 
     const pokeTypes = poke.types.map(type => type.type.name);
-    const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1);
-    const color = colors[type];
+    const primaryType = pokeTypes[0];
+
+    const color = colors[primaryType];
 
     card.style.backgroundColor = color;
+
+    const typeHTML = pokeTypes.map(type => `<span>${type}</span>`).join(', ');
+
+    const generation = getGeneration(poke.id);
 
     const pokemonInnerHTML = `
         <div class="imgContainer">
@@ -52,13 +83,30 @@ const createPokemonCard = (poke) => {
         <div class="info">
             <span class="number">#${id}</span>
             <h3 class="name">${name}</h3>
-            <small class="type">Type: <span>${type}</span></small>
+            <small class="type" style="display: none;">Generation: ${generation}<br>Type: ${typeHTML}</small>
         </div>
     `;
+
+
     card.innerHTML = pokemonInnerHTML;
 
+    const numberElement = card.querySelector('.info').querySelector('.number');
+
+    // Adiciona evento de mouse para mostrar/ocultar informações de tipo
+    card.addEventListener('mouseover', function() {
+        card.querySelector('.imgContainer').style.display = 'none';
+        card.querySelector('.info').querySelector('.type').style.display = 'block';
+    });
+
+    card.addEventListener('mouseout', function() {
+        card.querySelector('.imgContainer').style.display = 'block';
+        card.querySelector('.info').querySelector('.type').style.display = 'none';
+    });
+
+    
     pokeContainer.appendChild(card);
 };
+
 
 fetchPokemons();
 
