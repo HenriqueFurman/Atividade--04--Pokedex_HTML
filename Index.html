@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="Assets/CSS/Style.css">
-    <title>Pokedex</title>
-  </head>
-  <body>
-    <header>
-        <input type="text" id="search-input" placeholder="Search by Pokemon name">
-        <button id="search-button">Search</button>
-        <div id="search-results"></div>
-    </header>
 
-    <div class="conteudo_principal">
-        <h1>Pokedex</h1>
-        <div class="pokeContainer" id="pokeContainer"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Assets/CSS/style.css">
+  <title>Projeto Pokedex</title>
+</head>
+
+<body>
+  <header>
+    <div class="search-container">
+      <form class="search-form">
+        <div class="search-input-container">
+          <input type="text" id="search-input" class="search-input" placeholder="Digite aqui">
+          <button type="button" id="search-button" class="search-button">Buscar</button>
+        </div>
+      </form>
+      <nav>
+        <ul>
+          <li><a href="">Início</a></li>
+          <li><a href="">Login/Cadastrar-se</a></li>
+          <li><a href="">Perfil do Usuário</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <script src="Assets/JS/script.js"></script><!--nao delete essa linha-->  
-  </body>
+  <div class="conteudo-principal">
+    <h1>Pokedex</h1>
+    <div class="pokeContainer" id="pokeContainer"></div>
+  </div>
+  <script src="Assets/Java/Script.js"></script><!--nao delete essa linha-->
+</body>
+
 </html>
