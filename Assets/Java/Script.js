@@ -134,3 +134,38 @@ document.addEventListener("DOMContentLoaded", function() {
         searchInput.value = '';
     });
 });
+
+// Funçao de Filtro
+const btnFilter = document.querySelector('.icon-filter')
+
+btnFilter.addEventListener('click', () => {
+    const containerFilter = document.querySelector('.container-filters')
+
+    containerFilter.classList.toggle('active')
+})
+
+const filterPokemonByType = () => {
+    const checkboxes = document.querySelectorAll('.group-type input[type="checkbox"]');
+
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+            const selectedTypes = [...document.querySelectorAll('.group-type input[type="checkbox"]:checked')]
+                .map((checkbox) => checkbox.name);
+
+            const pokemonCards = document.querySelectorAll('.pokemon');
+
+            pokemonCards.forEach((card) => {
+                const types = [...card.querySelectorAll('.type span')]
+                    .map((span) => span.textContent.toLowerCase());
+
+                if (selectedTypes.length === 0 || selectedTypes.some((type) => types.includes(type))) {
+                    card.style.display = ''; // Exibir Pokémon que correspondem aos tipos selecionados
+                } else {
+                    card.style.display = 'none'; // Ocultar Pokémon que não correspondem aos tipos selecionados
+                }
+            });
+        });
+    });
+};
+
+filterPokemonByType();
