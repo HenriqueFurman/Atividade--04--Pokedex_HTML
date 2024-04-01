@@ -1,5 +1,5 @@
 const pokeContainer = document.querySelector("#pokeContainer");
-const pokemonCount = 151; //altera o numero de pokemon que é monstrado
+const pokemonCount = 493; //altera o numero de pokemon que é monstrado
 const colors = {  //altera a cor bloco onde esta o pokemon em relaçao ao tipo
     normal: '#B7B7A8',
     fire: '#FF4422',
@@ -16,7 +16,7 @@ const colors = {  //altera a cor bloco onde esta o pokemon em relaçao ao tipo
     rock: '#C5B67C',
     ghost: '#7D7DC5',
     dragon:'#8B7DF1',
-    fark: '#8B6E60',
+    dark: '#8B6E60',
     steel: '#B7B7C5',
     fairy: '#F1A8F1',
 };
