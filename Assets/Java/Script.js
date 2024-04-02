@@ -1,5 +1,5 @@
 const pokeContainer = document.querySelector("#pokeContainer");
-const pokemonCount = 12; //altera o numero de pokemon que é monstrado
+const pokemonCount = 493; //altera o numero de pokemon que é monstrado
 const colors = {  //altera a cor bloco onde esta o pokemon em relaçao ao tipo
     normal: '#B7B7A8',
     fire: '#FF4422',
@@ -39,21 +39,23 @@ const getPokemons = async (id) => {
 
 const getGeneration = (id) => {
     if (id >= 1 && id <= 151) {
-        return 'Geração I';
+        return 'Geração 1';
     } else if (id >= 152 && id <= 251) {
-        return 'Geração II';
+        return 'Geração 2';
     } else if (id >= 252 && id <= 386) {
-        return 'Geração III';
+        return 'Geração 3';
     } else if (id >= 387 && id <= 493) {
-        return 'Geração IV';
+        return 'Geração 4';
     } else if (id >= 494 && id <= 649) {
-        return 'Geração V';
+        return 'Geração 5';
     } else if (id >= 650 && id <= 721) {
-        return 'Geração VI';
+        return 'Geração 6';
     } else if (id >= 722 && id <= 809) {
-        return 'Geração VII';
+        return 'Geração 7';
     } else if (id >= 810 && id <= 898) {
-        return 'Geração VIII';
+        return 'Geração 8';
+    } else if (id >= 899 && id <= 1025) {
+        return 'Geração 9';
     } else {
         return 'Geração desconhecida';
     }
@@ -169,3 +171,58 @@ const filterPokemonByType = () => {
 };
 
 filterPokemonByType();
+
+// Função para adicionar evento de clique aos itens do menu suspenso de geração
+const addDropdownClickEvent = () => {
+    const dropdownItems = document.querySelectorAll('.dropdown-content a');
+    dropdownItems.forEach((item) => {
+        item.addEventListener('click', (event) => {
+            event.preventDefault();
+            const selectedGeneration = parseInt(item.getAttribute('data-generation'));
+            filterPokemonsByGeneration(selectedGeneration);
+        });
+    });
+};
+
+// Função para gerar os links do dropdown com base no valor de pokemonCount
+const generateDropdownLinks = () => {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.innerHTML = ''; // Limpa o conteúdo atual do dropdown
+
+    const generatedGenerations = {}; // Objeto para rastrear gerações já geradas
+
+    for (let i = 1; i <= pokemonCount; i++) {
+        const generation = getGeneration(i); // Obtém a geração do Pokémon
+        const generationNumber = parseInt(generation.split(' ')[1]);
+
+        // Verifica se a geração já foi gerada, se não, adiciona ao dropdown
+        if (!generatedGenerations[generationNumber]) {
+            const link = document.createElement('a');
+            link.setAttribute('href', '#');
+            link.setAttribute('data-generation', generationNumber);
+            link.textContent = `Geração ${generationNumber}`;
+            dropdownContent.appendChild(link);
+            generatedGenerations[generationNumber] = true; // Marca a geração como gerada
+        }
+    }
+
+    // Atualiza a função de filtro quando os links do dropdown são gerados
+    addDropdownClickEvent();
+};
+
+// Função para filtrar os Pokémon por geração e ocultar os demais
+const filterPokemonsByGeneration = (generation) => {
+    const pokemonCards = document.querySelectorAll('.pokemon');
+    pokemonCards.forEach((card) => {
+        const id = parseInt(card.querySelector('.number').textContent.slice(1));
+        const cardGeneration = getGeneration(id).split(' ')[1];
+        if (cardGeneration == generation) {
+            card.style.display = ''; // Exibir Pokémon que pertencem à geração selecionada
+        } else {
+            card.style.display = 'none'; // Ocultar Pokémon que não pertencem à geração selecionada
+        }
+    });
+};
+
+// Chama a função para gerar os links do dropdown quando a página é carregada
+generateDropdownLinks();

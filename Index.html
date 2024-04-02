@@ -19,9 +19,12 @@
       </form>
       <nav>
         <ul>
-          <li><a href="">Início</a></li>
-          <li><a href="">Login/Cadastrar-se</a></li>
-          <li><a href="">Perfil do Usuário</a></li>
+          <li><a href="Index.html">Início</a></li>
+          <li class="dropdown">
+              <a href="#" class="dropbtn">Geração</a>
+              <div class="dropdown-content"></div>
+          </li>
+          <li><a href="Perfil.html">Login/Cadastrar-se</a></li>
         </ul>
       </nav>
     </div>
@@ -30,6 +33,7 @@
 
   
   <div class="conteudo-principal">
+    
     <div class="container-filters">
       <div class="filter-by-type">
         <span>Tipo</span>
@@ -108,43 +112,14 @@
         </div>
       </div>
     </div>
+
     <div class="icon-filter ">
       <img src="Assets/img/filtro.png" alt="Ícone" class="icon-filter-img">
       <h1>Pokedex</h1>
     </div>
-    
 
-
-
-
-
-
-
-
-
-
-
-
-      <div class="pokeContainer" id="pokeContainer"></div><!--nao delete essa linha-->
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="pokeContainer" id="pokeContainer"></div><!--nao delete essa linha-->
+</div>
 
 
 
@@ -152,9 +127,8 @@
 
   <footer>
     <div id="footer_content">
-      <div id="footer_contacts">
-        <h1>Logo</h1>
-        <p>Pokedex GG</p>
+      <div id="footer_logo">
+        <img src="Assets/img/Logo.png" alt="Logo">
       </div>
 
       <ul class="footer-list">

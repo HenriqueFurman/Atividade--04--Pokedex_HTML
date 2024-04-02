@@ -199,6 +199,69 @@ nav ul li a {
 
 
 
+
+
+
+
+
+
+
+/* Estilos do suspenso */
+/* ============================== */
+/* Estilos para o menu suspenso */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #45453A;
+    min-width: 120px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .2);
+    border-radius: 0;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Estilos do Container de Pokémons */
 /* ================================= */
 
@@ -264,7 +327,7 @@ nav ul li a {
 /* Estilos do Rodape */
 :root {
     --color-neutral-0: #0e0c0c;
-    --color-neutral-10: #171717;
+    --color-neutral-10: rgba(25, 25, 25);
     --color-neutral-30: #a8a29e;
     --color-neutral-40: #f5f5f5;
 
@@ -286,6 +349,12 @@ footer {
     width: 100%;
     color: var(--color-neutral-40);
 }
+
+#footer_logo img {
+    width: 230px; /* Ajuste a largura conforme necessário */
+    height: auto; /* Isso garante que a proporção da imagem seja mantida */
+}
+
 
 .footer-link {
     text-decoration: none;
