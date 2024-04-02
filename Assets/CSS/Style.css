@@ -363,6 +363,7 @@ footer {
     font-weight: 100;
 }
 
+/*Responsividade do Rodape*/
 @media screen and (max-width: 768px) {
     #footer_content {
         grid-template-columns: repeat(2, 1fr);
@@ -377,7 +378,6 @@ footer {
     }
 }
 
-/*mobile*/
 @media (max-width: 768px) {
     .rodape-div-1, .rodape-div-2, .rodape-div-3{
         width: calc(50% - 20px);
@@ -389,4 +389,29 @@ footer {
 }
 
 
-
+/*Responsividade do Cabeçalho*/
+@media screen and (max-width: 768px) {
+    /* Ajuste o estilo do cabeçalho conforme necessário para telas menores que 768px */
+    header {
+        padding: 5px 0; /* Reduza o preenchimento do cabeçalho */
+    }
+    
+    .search-container {
+        flex-direction: column; /* Altere a direção do flexbox para coluna */
+        align-items: center; /* Centralize os itens na coluna */
+    }
+    
+    .search-form .search-input-container {
+        margin-top: 10px; /* Adicione uma margem no topo */
+    }
+    
+    nav ul {
+        flex-direction: column; /* Altere a direção do flexbox para coluna */
+        text-align: center; /* Centralize o texto */
+    }
+    
+    nav ul li {
+        margin: 10px 0; /* Adicione margem entre os itens */
+    }
+  }
+  
