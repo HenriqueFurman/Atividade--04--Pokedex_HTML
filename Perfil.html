@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Assets/CSS/style.css">
-  <title>Projeto Pokedex</title>
+  <link rel="stylesheet" href="Assets/CSS/Perfil-Syle.css">
+  <title>MeuPerfil</title>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     <div class="search-container">
       <form class="search-form">
         <div class="search-input-container">
-          <input type="text" id="search-input" class="search-input" placeholder="Digite aqui">
+          <input type="text" id="search-input" class="search-input" placeholder="Qual o Nome do Poke">
           <button type="button" id="search-button" class="search-button">Buscar</button>
         </div>
       </form>
@@ -21,8 +21,8 @@
         <ul>
           <li><a href="Index.html">Início</a></li>
           <li class="dropdown">
-              <a href="#" class="dropbtn">Geração</a>
-              <div class="dropdown-content"></div>
+            <a href="#" class="dropbtn">Geração</a>
+            <div class="dropdown-content"></div>
           </li>
           <li><a href="Perfil.html">Usuario</a></li>
         </ul>
@@ -30,20 +30,93 @@
     </div>
   </header>
 
+  <br><br><br><br><br>
+  <h1>Meus Favoritos</h1>
 
-  
-  <div class="conteudo-principal">
-    <h2>Sendo Atualizado</h2>
+  <div class="pokeContainer" id="pokeContainer">
+
+    <div class="pokemon"><!--Lucario-->
+      <div class="imgContainer">
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/448.png" alt="Lucario">
+      </div>
+      <div class="info">
+        <span class="number">#448</span>
+        <h3 class="name">Lucario</h3>
+        <small class="G&T">Generation: 4 <br>Type: <span>Fighting, Steel</span></small>
+    </div>
+    </div>
+
+    <div class="pokemon"><!--Gardevoir-->
+      <div class="imgContainer">
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/282.png" alt="Gardevoir">
+      </div>
+      <div class="info">
+        <span class="number">#282</span>
+        <h3 class="name">Gardevoir</h3>
+        <small class="G&T">Generation: 3 <br>Type: <span>Psychic, Fairy</span></small>
+    </div>
+    </div>
+
+    <div class="pokemon"><!--Froslass-->
+      <div class="imgContainer">
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/478.png" alt="Froslass">
+      </div>
+      <div class="info">
+        <span class="number">#478</span>
+        <h3 class="name">Froslass</h3>
+        <small class="G&T">Generation: 4 <br>Type: <span>Ice, Ghost</span></small>
+    </div>
+    </div>
+
+    <div class="pokemon"><!--Haxorus-->
+      <div class="imgContainer">
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/612.png" alt="Haxorus">
+      </div>
+      <div class="info">
+        <span class="number">#612</span>
+        <h3 class="name">Haxorus</h3>
+        <small class="G&T">Generation: 5 <br>Type: <span>Dragon</span></small>
+    </div>
+    </div>
+
+    <div class="pokemon"><!--Zoroark-->
+      <div class="imgContainer">
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/571.png" alt="Zoroark">
+      </div>
+      <div class="info">
+        <span class="number">#571</span>
+        <h3 class="name">Zoroark</h3>
+        <small class="G&T">Generation: 4 <br>Type: <span>Dark</span></small>
+    </div>
+    </div>
+
+    <div class="pokemon"><!--Meloetta-->
+      <div class="imgContainer">
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/648.png" alt="Meloetta">
+      </div>
+      <div class="info">
+        <span class="number">#648</span>
+        <h3 class="name">Meloetta</h3>
+        <small class="G&T">Generation: 4 <br>Type: <span>Normal, Psychic</span></small>
+    </div>
+    </div>
+
+    <div class="pokemon"><!--Articuno-->
+      <div class="imgContainer">
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/144.png" alt="Articuno">
+      </div>
+      <div class="info">
+        <span class="number">#144</span>
+        <h3 class="name">Articuno</h3>
+        <small class="G&T">Generation: 1 <br>Type: <span>Ice, Flying</span></small>
+    </div>
+    </div>
   </div>
-
-
-
-
-
+ 
   <footer>
     <div id="footer_content">
       <div id="footer_logo">
-        <img src="Assets/img/Logo.png" alt="Logo">
+        <img src="Assets/img/Logo-1.png" alt="Logo">
       </div>
 
       <ul class="footer-list">
@@ -92,7 +165,6 @@
     </div>
   </footer>
 
-  <script src="Assets/Java/Script.js"></script><!--nao delete essa linha-->
 </body>
 
 </html>

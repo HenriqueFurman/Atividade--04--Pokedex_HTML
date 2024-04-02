@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Assets/CSS/style.css">
-  <title>Projeto Pokedex</title>
+  <title>Pokedex</title>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     <div class="search-container">
       <form class="search-form">
         <div class="search-input-container">
-          <input type="text" id="search-input" class="search-input" placeholder="Digite aqui">
+          <input type="text" id="search-input" class="search-input" placeholder="Qual o Nome do Poke">
           <button type="button" id="search-button" class="search-button">Buscar</button>
         </div>
       </form>
@@ -21,8 +21,8 @@
         <ul>
           <li><a href="Index.html">Início</a></li>
           <li class="dropdown">
-              <a href="#" class="dropbtn">Geração</a>
-              <div class="dropdown-content"></div>
+            <a href="#" class="dropbtn">Geração</a>
+            <div class="dropdown-content"></div>
           </li>
           <li><a href="Perfil.html">Login/Cadastrar-se</a></li>
         </ul>
@@ -30,10 +30,8 @@
     </div>
   </header>
 
-
-  
   <div class="conteudo-principal">
-    
+
     <div class="container-filters">
       <div class="filter-by-type">
         <span>Tipo</span>
@@ -118,12 +116,9 @@
       <h1>Pokedex</h1>
     </div>
 
-    <div class="pokeContainer" id="pokeContainer"></div><!--nao delete essa linha-->
-</div>
-
-
-
-
+    <div class="pokeContainer" id="pokeContainer"></div>
+    <!--nao delete essa linha é a responsavel gerar os cards pokemon-->
+  </div>
 
   <footer>
     <div id="footer_content">
@@ -177,7 +172,8 @@
     </div>
   </footer>
 
-  <script src="Assets/Java/Script.js"></script><!--nao delete essa linha-->
+  <script src="Assets/Java/Script.js"></script>
+  <!--nao delete essa linha é a responsavel pelas funçoes-->
 </body>
 
 </html>
