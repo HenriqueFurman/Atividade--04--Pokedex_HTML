@@ -1,6 +1,11 @@
+// Define qual o contêiner que vai receber as info. dos Pokémon
 const pokeContainer = document.querySelector("#pokeContainer");
-const pokemonCount = 649; //altera o numero de pokemon que é monstrado
-const colors = {  //altera a cor bloco onde esta o pokemon em relaçao ao tipo
+
+// Define o número de Pokémon que serao mostrados
+const pokemonCount = 493; 
+
+//altera a cor Card onde esta o pokemon em relaçao ao Primeiro tipo
+const colors = {
     normal: '#B7B7A8',
     fire: '#FF4422',
     water: '#51A8FF',
@@ -21,15 +26,17 @@ const colors = {  //altera a cor bloco onde esta o pokemon em relaçao ao tipo
     fairy: '#F1A8F1',
 };
 
-
+// aqui o tipo primario recebe a cor ^ tipos de Pokémon
 const mainTypes = Object.keys(colors);
 
+// Esta função busca os dados dos Pokémon na no banco de dados(pokeapi)
 const fetchPokemons = async () => {
     for (let i = 1; i <= pokemonCount; i++) {
         await getPokemons(i);
     }
 };
 
+// Função para obter dados de um Pokémon específico
 const getPokemons = async (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const resp = await fetch(url);
@@ -37,6 +44,7 @@ const getPokemons = async (id) => {
     createPokemonCard(data);
 };
 
+// Aqui definimos a geração do Pokémon com base no seu numero ID
 const getGeneration = (id) => {
     if (id >= 1 && id <= 151) {
         return 'Geração 1';
@@ -61,6 +69,8 @@ const getGeneration = (id) => {
     }
 };
 
+
+// Esta função analisa a info e cria um cartão para cada Pokémon
 const createPokemonCard = (poke) => {
     const card = document.createElement('div');
     card.classList.add("pokemon");
@@ -113,6 +123,7 @@ const createPokemonCard = (poke) => {
 
 fetchPokemons();
 
+// Função para Botao de Busca Pokémon por nome
 document.addEventListener("DOMContentLoaded", function() {
     const searchButton = document.getElementById('search-button');
     const searchInput = document.getElementById('search-input');
@@ -137,15 +148,16 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Funçao de Filtro
 const btnFilter = document.querySelector('.icon-filter')
 
+// Função para o ativar a barra lateral do filtro aparecer
 btnFilter.addEventListener('click', () => {
     const containerFilter = document.querySelector('.container-filters')
 
     containerFilter.classList.toggle('active')
 })
 
+// Função para Busca de tipo de pokemon
 const filterPokemonByType = () => {
     const checkboxes = document.querySelectorAll('.group-type input[type="checkbox"]');
 
