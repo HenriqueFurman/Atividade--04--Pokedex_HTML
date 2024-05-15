@@ -2,7 +2,7 @@
 const pokeContainer = document.querySelector("#pokeContainer");
 
 // Define o número de Pokémon que serao mostrados
-const pokemonCount = 493; 
+const pokemonCount = 450; 
 
 //altera a cor Card onde esta o pokemon em relaçao ao Primeiro tipo
 const colors = {
